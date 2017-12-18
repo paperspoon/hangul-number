@@ -39,6 +39,15 @@ describe('123456 테스트', function(){
     })
 });
 
+describe('1003012 테스트', function(){
+    var num = 1003012;
+    var expected = '일백만삼천일십이';
+    var actual = hangulNumber.encode(num);
+    it(num + ' => ' + actual , function(){
+        expect(actual).to.equal(expected);
+    })
+});
+
 
 describe('100 테스트', function(){
     var num = 100;

@@ -30,15 +30,20 @@ function encode(param) {
          let result = '';
 
          let num = parseInt(o);
-
+         
          result += numbers[parseInt(o)];
 
          let division = Math.floor((a.length - 1 - i) / 4);
 
          let rest = ((a.length - 1) - i) % 4;
 
+         if (num === 0 && rest != 0) return '';
+         
          result += smallTypes[rest];
+         
          if (rest == 0) result += bigTypes[division];
+
+
 
          return result;
      });
