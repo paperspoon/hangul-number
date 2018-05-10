@@ -23,7 +23,9 @@ function encode(param) {
      // 3. 남은게 없다면 없는대로.. 
      if (param === '') return '';
 
-     // param 456
+     // 4. 앞에 붙은 0 지우기
+     param = String(parseInt(param));
+
 
      let resultArray = param.split('').map((o, i, a) => {
 
@@ -40,11 +42,9 @@ function encode(param) {
          if (num === 0 && rest != 0) return '';
          
          result += smallTypes[rest];
-         
+
          if (rest == 0) result += bigTypes[division];
-
-
-
+         
          return result;
      });
 
